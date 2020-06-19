@@ -22,8 +22,9 @@ describe('Protractor Demo App', function() {
         console.log('Zprávičky cards: ' + kartySeZpravickami.get(0));
         console.log('Length of the array with Zprávičky cards: ' + kartySeZpravickami.count());
         let dnesniZpravicky = [];
+        let count = await kartySeZpravickami.count();
 
-        for(let karta = 0; karta <= 30; karta++) {
+        for(let karta = 0; karta <= count; karta++) {
             console.log('Card: ' + kartySeZpravickami.get(karta));
             let datum = await element.all(by.css('span.design-impressum__item')).get(karta);
             let text = await datum.getText();
@@ -32,7 +33,7 @@ describe('Protractor Demo App', function() {
             if (text === 'Dnes') {
                 dnesniZpravicky.push(karta);
             } else {
-                console.log('On the root.cz is ' + dnesniZpravicky.length + ' Zpráviček today.');
+                console.log('On the root.cz are ' + dnesniZpravicky.length + ' Zprávičky cards today.');
                 break;
             }
         }
