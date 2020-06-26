@@ -20,8 +20,10 @@ class Page {
     getDatum(){
         return this.datum;
     }
+    }
 
-}
+
+
 
 class RootPage extends Page {
     constructor(browser) {

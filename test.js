@@ -14,8 +14,6 @@ describe('Protractor Demo App', function() {
 
     it('found todays "zprávičky" on the root.com and count them. ', async function () {
         console.log('I am in!');
-
-        await browser.sleep(2000);
         const zpravickyLink = await rootPage.getZpravickyLink();
         console.log('Element link Zprávičky:' + zpravickyLink);
         // const EC = protractor.ExpectedConditions;
@@ -24,21 +22,17 @@ describe('Protractor Demo App', function() {
         await console.log('Card with "Zprávičky" page opens.');
         await browser.sleep(1000);
         let kartySeZpravickami = await rootPage.getKartySeZpravickami();
-        // let kartySeZpravickami = element.all(by.css('.design-article--without-image.design-article.design-tile'));
         console.log('Length of the array with Zprávičky cards: ' + rootPage.getNumberOfKaretSeZpravickami());
         let dnesniZpravicky = [];
         let count = await rootPage.getNumberOfKaretSeZpravickami();
-
         for(let karta = 0; karta <= count; karta++) {
-            console.log('Card: ' + kartySeZpravickami.get(karta));
-            let datum = await element.all(by.css('span.design-impressum__item')).get(karta);
+            let datum = await rootPage.getDatum().get(karta);
             let text = await datum.getText();
-            console.log('Date: ' + datum);
             console.log('Date text: ' + text);
             if (text === 'Dnes') {
                 dnesniZpravicky.push(karta);
             } else {
-                console.log('On the root.cz are ' + dnesniZpravicky.length + ' Zprávičky cards today.');
+                console.log('On the root.cz are ' + dnesniZpravicky.length + ' cards with "Zprávičky" today.');
                 break;
             }
         }
