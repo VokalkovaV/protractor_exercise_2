@@ -16,6 +16,7 @@ describe('Protractor Demo App', function() {
         console.log('I am in!');
         const zpravickyLink = await rootPage.getZpravickyLink();
         console.log('Element link Zprávičky:' + zpravickyLink);
+        await browser.sleep(2000);
         // const EC = protractor.ExpectedConditions;
         // await browser.wait(EC.invisibilityOf(zpravickyLink),8000);//todo: find why it doesn't work
         await zpravickyLink.click();
