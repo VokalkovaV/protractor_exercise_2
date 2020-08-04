@@ -15,15 +15,6 @@ exports.config = {
         print: function () {
         },
     },
-    // plugins: [{
-    //     package: 'protractor-screenshoter-plugin',
-    //     screenshotOnExpect: 'failure+success',
-    //     withLogs: true,
-    //     writeReportFreq: 'asap',
-    //     imageToAscii: 'none',
-    //     clearFoldersBetweenTest: true,
-    // },
-    // ],
 
     multiCapabilities: [{
         browserName: 'firefox',
@@ -37,11 +28,6 @@ exports.config = {
             console.log('Reset url between tests');
         });
     },
-
-    //  jasmine
-    //      .getEnv()
-    //      .addReporter(new SpecReporter({test: {displayStackTrace: true}}));
-    // },
 
     onComplete: function () {
         browser.quit();
