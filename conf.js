@@ -16,11 +16,15 @@ exports.config = {
         },
     },
 
-    multiCapabilities: [{
-        browserName: 'firefox',
-    }, {
-        browserName: 'chrome',
-    }],
+    capabilities: {
+        browserName: 'firefox'
+    },
+
+    // multiCapabilities: [{
+    //     browserName: 'firefox',
+    // }, {
+    //     browserName: 'chrome',
+    // }],
 
     onPrepare: function() {
         beforeEach(async () => {

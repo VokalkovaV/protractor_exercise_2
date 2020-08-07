@@ -1,18 +1,16 @@
 // import {browser} from "protractor";
+// import make issues with project
 
 class Base {
 
-
     async animationDelay() {
-        console.log("here");
         browser.sleep(10000);
-        console.log("here");
     }
 
     async waitForVisibility(elm) {
         const EC = protractor.ExpectedConditions;
         await browser.wait(EC.invisibilityOf(elm),8000);
-        //todo: find why it doesn't work
+        //todo: find why it doesn't work and after it implement function
     }
 }
 
