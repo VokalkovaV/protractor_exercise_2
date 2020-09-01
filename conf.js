@@ -1,11 +1,11 @@
-
+const suites = require('./suites');
 const DEFAULT_TIMEOUT  = 30000;
 
 exports.config = {
     allScriptsTimeout: DEFAULT_TIMEOUT,
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['test.js'],
+    suites,
     restartBrowserBetweenTests: true,
     getPageTimeout: DEFAULT_TIMEOUT,
     jasmineNodeOpts: {

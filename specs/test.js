@@ -1,6 +1,6 @@
 require('geckodriver');
-const page = require('./po.js');
-const base = require('./base');
+const page = require('../po/po.js');
+const base = require('../base');
 
 //todo: find solution for protractor import issue
 
@@ -17,10 +17,10 @@ describe('Protractor practice - ', function() {
 
     it('Find today\'s news on the root.com and count them ', async function () {
         const zpravickyLink = await rootPage.getZpravickyLink();
-        await baseInstance.animationDelay();
+        await baseInstance.waitForVisibility(zpravickyLink);
         await zpravickyLink.click();
         await console.log('Page with news opens.');
-        await baseInstance.animationDelay();
+        await baseInstance.waitForVisibility(rootPage.kartaSeZpravickou);
         let dnesniZpravicky = [];
         let count = await rootPage.getNumberOfKaretSeZpravickami();
         console.log('Length of the array with news cards: ' +  count);

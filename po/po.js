@@ -28,6 +28,7 @@ class RootPage extends Page {
         super(browser);
         this.zpravickyLink = element.all(by.css('.design-navigation__layout-cell .navigation__link[href="/zpravicky/"]'));
         this.kartySeZpravickami = element.all(by.css('.design-article--without-image.design-article.design-tile'));
+        this.kartaSeZpravickou = this.kartySeZpravickami.get(0);
         this.datum = element.all(by.css('span.design-impressum__item'));
     }
 }
