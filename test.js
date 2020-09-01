@@ -1,5 +1,4 @@
 require('geckodriver');
-// const webdriver = require('selenium-webdriver');
 const page = require('./po.js');
 const base = require('./base');
 
@@ -14,7 +13,6 @@ describe('Protractor practice - ', function() {
         baseInstance = new base.Base();
         await browser.waitForAngularEnabled(false);
         await browser.get('https://www.root.cz');
-        await console.log('Test is starting.');
     });
 
     it('Find today\'s news on the root.com and count them ', async function () {

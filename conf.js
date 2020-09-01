@@ -1,8 +1,7 @@
-// conf.js
 
 const DEFAULT_TIMEOUT  = 30000;
+
 exports.config = {
-    // seleniumServerStartTimeout: 11000,
     allScriptsTimeout: DEFAULT_TIMEOUT,
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -12,8 +11,7 @@ exports.config = {
     jasmineNodeOpts: {
         showColors: true,
         defaultTimeoutIntervaal: DEFAULT_TIMEOUT,
-        print: function () {
-        },
+        print: function () {},
     },
 
     capabilities: {
@@ -30,6 +28,7 @@ exports.config = {
         beforeEach(async () => {
             browser.resetUrl = 'about:blank';
             console.log('Reset url between tests');
+            console.log('Test is starting.');
         });
     },
 
